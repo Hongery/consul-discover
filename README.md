@@ -75,6 +75,42 @@ README.md
 
  ```
  1.go mod tidy 引入外部依赖
- 2.
+
+ 2.需要替换（main.go）
+   //discoveryClient,err := discover.NewMyDiscoverClient(*consulHost,*consulPort)
+	discoveryClient, err := discover.NewKitDiscoverClient(*consulHost, *consulPort)
+
+ ```
+
+
+ #### 提交代码
+ ```bash
+PS D:\gocode\src\github.com\consul-discover> git init
+Initialized empty Git repository in D:/gocode/src/github.com/consul-discover/.git/
+PS D:\gocode\src\github.com\consul-discover> git add .
+PS D:\gocode\src\github.com\consul-discover> git commit -m "first commit "
+[master (root-commit) e8edb51] first commit
+ 11 files changed, 1623 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 config/config.go
+ create mode 100644 discover/discover_client.go
+ create mode 100644 discover/kit_discover_client.go
+ create mode 100644 endpoint/endpoints.go
+ create mode 100644 go.mod
+ create mode 100644 go.sum
+ create mode 100644 main.go
+ create mode 100644 service/service.go
+ create mode 100644 transport/http.go
+PS D:\gocode\src\github.com\consul-discover> git branch -M main (main分支)
+PS D:\gocode\src\github.com\consul-discover> git remote add origin  https://github.com/Hongery/consul-discover.git
+PS D:\gocode\src\github.com\consul-discover> git push origin main
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (18/18), 42.81 KiB | 7.13 MiB/s, done.
+Total 18 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Hongery/consul-discover.git
+ * [new branch]      main -> main
 
  ```
