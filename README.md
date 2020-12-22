@@ -114,3 +114,12 @@ To https://github.com/Hongery/consul-discover.git
  * [new branch]      main -> main
 
  ```
+ 
+ 
+ #### my_discover_client 和 kit_discover_client 的区别
+ ```
+ my_discover_client 配置信息需要自己手动配置，需要的信息自己添加
+ kit_discover_client 配置信息已经完全集成
+ ```
+ MyDiscoverClient(*consulHost,*consulPort)
+	discoveryClient, err := discover.NewKitDiscoverClient(*consulHost, *consulPort)
